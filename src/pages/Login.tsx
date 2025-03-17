@@ -17,6 +17,7 @@ export default function Login() {
     setLoading(true);
     
     try {
+      console.log(credentials)
       const { data } = await api.post('/auth/login', credentials);
       if (data.status === "success"){
         localStorage.setItem('token', data.data.access_token);
