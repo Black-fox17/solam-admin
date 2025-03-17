@@ -8,14 +8,13 @@ export interface User {
 
 export interface Order {
   id: string;
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
-  phoneNumber: string;
-  serviceType: string;
-  messageContent: string;
+  phone: string;
+  service: string;
+  message: string;
   status: 'pending' | 'done';
-  createdAt: string;
+  created_at: string;
 }
 
 export interface AuthResponse {

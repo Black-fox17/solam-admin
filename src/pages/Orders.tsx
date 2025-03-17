@@ -16,8 +16,8 @@ export default function Orders() {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await api.get('/orders');
-      setOrders(data);
+      const { data } = await api.get('/order');
+      setOrders(data.data);
     } catch (error) {
       toast.error('Failed to fetch orders');
     } finally {
@@ -95,18 +95,18 @@ export default function Orders() {
               <tr key={order.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm font-medium text-gray-900 dark:text-white">
-                    {order.firstName} {order.lastName}
+                    {order.name}
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm text-gray-500 dark:text-gray-400">
                     <div>{order.email}</div>
-                    <div>{order.phoneNumber}</div>
+                    <div>{order.phone}</div>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900 dark:text-white">{order.serviceType}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">{order.messageContent}</div>
+                  <div className="text-sm text-gray-900 dark:text-white">{order.service}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{order.message}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span
